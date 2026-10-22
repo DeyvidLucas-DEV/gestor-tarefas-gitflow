@@ -1,0 +1,13 @@
+[project]
+name = "gestor-tarefas"
+version = "1.0.0"
+description = "Gestor de tarefas simples para demonstrar Gitflow e GitHub Actions"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+src = ["src", "tests"]
