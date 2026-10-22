@@ -32,6 +32,14 @@ class GestorTarefas:
         tarefa.concluida = True
         return tarefa
 
+    def editar_titulo(self, tarefa_id: int, novo_titulo: str) -> Tarefa:
+        novo_titulo = novo_titulo.strip()
+        if not novo_titulo:
+            raise ValueError("O título da tarefa não pode ser vazio.")
+        tarefa = self.buscar(tarefa_id)
+        tarefa.titulo = novo_titulo
+        return tarefa
+
     def remover(self, tarefa_id: int) -> None:
         self.buscar(tarefa_id)
         del self._tarefas[tarefa_id]
