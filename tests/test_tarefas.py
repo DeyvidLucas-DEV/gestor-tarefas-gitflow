@@ -43,3 +43,16 @@ def test_listar_apenas_pendentes():
     gestor.concluir(1)
     pendentes = gestor.listar(apenas_pendentes=True)
     assert [t.titulo for t in pendentes] == ["B"]
+
+
+def test_editar_titulo():
+    gestor = GestorTarefas()
+    gestor.adicionar("Titulo antigo")
+    assert gestor.editar_titulo(1, "Titulo novo").titulo == "Titulo novo"
+
+
+def test_editar_titulo_vazio_gera_erro():
+    gestor = GestorTarefas()
+    gestor.adicionar("Tarefa")
+    with pytest.raises(ValueError):
+        gestor.editar_titulo(1, "")
