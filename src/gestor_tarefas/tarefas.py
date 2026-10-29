@@ -49,3 +49,8 @@ class GestorTarefas:
         if apenas_pendentes:
             return [t for t in tarefas if not t.concluida]
         return tarefas
+
+def reabrir(self, tarefa_id: int) -> Tarefa:
+        tarefa = self.buscar(tarefa_id)
+        tarefa.concluida = False
+        return tarefa

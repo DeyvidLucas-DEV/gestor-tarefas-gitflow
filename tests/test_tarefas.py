@@ -56,3 +56,11 @@ def test_editar_titulo_vazio_gera_erro():
     gestor.adicionar("Tarefa")
     with pytest.raises(ValueError):
         gestor.editar_titulo(1, "")
+
+
+def test_reabrir_tarefa():
+    gestor = GestorTarefas()
+    gestor.adicionar("Revisar PR")
+    gestor.concluir(1)
+    assert not gestor.reabrir(1).concluida
+
