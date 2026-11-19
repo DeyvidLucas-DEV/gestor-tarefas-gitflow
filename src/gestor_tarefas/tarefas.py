@@ -32,6 +32,11 @@ class GestorTarefas:
         tarefa.concluida = True
         return tarefa
 
+    def reabrir(self, tarefa_id: int) -> Tarefa:
+        tarefa = self.buscar(tarefa_id)
+        tarefa.concluida = False
+        return tarefa
+
     def editar_titulo(self, tarefa_id: int, novo_titulo: str) -> Tarefa:
         novo_titulo = novo_titulo.strip()
         if not novo_titulo:
