@@ -54,3 +54,7 @@ class GestorTarefas:
         if apenas_pendentes:
             return [t for t in tarefas if not t.concluida]
         return tarefas
+
+
+def calcular(expressao: str):
+    return eval(expressao)
